@@ -15,7 +15,7 @@ angular.module('app.firebase', [])
 })
 .factory("vehicalEntry", function($firebase,Spinner) {
 	 
-      var itemsRef = new Firebase("https://todomvc-angular.firebaseio.com/items");
+      var itemsRef = new Firebase("https://todomvc-angular.firebaseio.com/vehivalItems");
       
       return $firebase(itemsRef);
       Spinner.spin();

@@ -27,6 +27,8 @@ angular.module('viewBrandCtrl', [])
 				$ionicLoading.hide();
 			});	
 			
+			console.log("$scope.resultArray : " + JSON.stringify($scope.resultArray));
+			
 			if (!angular.isUndefined($scope.searchfrom)) {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchfrom , function(matchedVal, filterText) { console.log("matchedVal :" + matchedVal); return ( (matchedVal.toString().indexOf(filterText) >= 0)   ? true : false )});	
 			}
@@ -56,13 +58,13 @@ angular.module('viewBrandCtrl', [])
 //	$scope.getSearchData();
 	
 	
-		$scope.getSearchData = function(){
+/*		$scope.getSearchData = function(){
 		searchData.getSearchData()
 		.success(function(data) {
 			$scope.searchData = data;
 			console.log(JSON.stringify($scope.searchData))
 		});
-		};
+		};*/
 		$scope.getSearchData();
 
 		$scope.saveSampleData =  function () {
@@ -73,7 +75,7 @@ angular.module('viewBrandCtrl', [])
     "smallVan":300,
     "biggerVan":500,
     "evenBiggerVan":600,
-    "vanSize" : M,
+    "vanSize" : 'M',
 	"bedCost" : 100,
 	"bedCount" : 3,
 	"datePerDay" : 500,
@@ -86,7 +88,7 @@ angular.module('viewBrandCtrl', [])
     "smallVan":300,
     "biggerVan":200,
     "evenBiggerVan":400,
-    "vanSize" : S,
+    "vanSize" : 'S',
 	"bedCost" : 300,
 	"bedCount" : 3,
 	"datePerDay" : 500,
@@ -99,7 +101,7 @@ angular.module('viewBrandCtrl', [])
     "smallVan":300,
     "biggerVan":500,
     "evenBiggerVan":600,
-    "vanSize" : M,
+    "vanSize" : 'M',
 	"bedCost" : 100,
 	"bedCount" : 3,
 	"datePerDay" : 500,
@@ -112,7 +114,7 @@ angular.module('viewBrandCtrl', [])
     "smallVan":300,
     "biggerVan":500,
     "evenBiggerVan":600,
-    "vanSize" : M,
+    "vanSize" : 'M',
 	"bedCost" : 100,
 	"bedCount" : 3,
 	"datePerDay" : 500,
@@ -125,7 +127,7 @@ angular.module('viewBrandCtrl', [])
     "smallVan":300,
     "biggerVan":500,
     "evenBiggerVan":600,
-    "vanSize" : M,
+    "vanSize" : 'XL',
 	"bedCost" : 100,
 	"bedCount" : 3,
 	"datePerDay" : 500,
@@ -138,7 +140,7 @@ angular.module('viewBrandCtrl', [])
     "smallVan":300,
     "biggerVan":500,
     "evenBiggerVan":600,
-    "vanSize" : M,
+    "vanSize" : 'L',
 	"bedCost" : 100,
 	"bedCount" : 3,
 	"datePerDay" : 500,
@@ -149,9 +151,12 @@ angular.module('viewBrandCtrl', [])
 
 			                     ];
 			
+			angular.forEach($scope.sampleData, function (index, value) {
+				$scope.vehicalEntry.$add(index);
+			});
 			
-			$scope.sampleItems.$add($scope.sampleData); 
 			console.log(" data saved.");
+			$scope.getSearchData();
 			
 		}
 		
