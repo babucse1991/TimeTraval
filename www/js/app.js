@@ -90,7 +90,7 @@ angular.module('starter', [
 	
 	
 	.state('tab.viewBrand', {
-		url: '/viewBrand',
+		url: '/viewBrand/:from/:to/:roomSize/:moveDate/:flexible/:isFullDay/:timeOfMove',
 		views: {
 			'tab-searchBrand': {
 				templateUrl: 'templates/viewBrand.html',
@@ -99,7 +99,6 @@ angular.module('starter', [
 
 		}
 	})
-	
 	
 	/*.state('tab.viewBrand', {
 		url: '/viewBrand/:labelOne/:labelTwo/:labelThree/:labelFour/:labelFive/:labelSix/:labelSeven',

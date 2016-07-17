@@ -4,18 +4,20 @@
            <div class="back-stable cornered padding">
 			  
       			   <label class="item item-input">
-	                     <input class="input" type="text" placeholder="From"  ionic-autocomplete="{items: items, onSelect:onSelect}"ng-model="sampleData.from" />
+	                     <input class="input" type="text" placeholder="From"  ionic-autocomplete="{items: items, onSelect:onSelect}" ng-model="sampleData.from" />
                    </label> 
        
                      <label class="item item-input">
-	                     <input type="text" placeholder="To" ng-model="sampleData.to" class="input">
+	                     <input type="text" placeholder="To" ng-model="sampleData.to" ionic-autocomplete="{items: items, onSelect:onSelect}" class="input">
                      </label> 
                      
                      <label class="item item-input item-select">
                           <span class="input-label">No Of Bedrooms</span>
-                               <select ng-model="sampleData.labelThree">
-				                    <option>Yes</option>
-				                    <option>No</option>
+                               <select ng-model="sampleData.roomSize">
+				                    <option>Small</option>
+				                    <option>Medium</option>
+				                    <option>Large</option>
+				                    <option>Extra Large</option>
                                </select>
                       </label>
                       
@@ -23,11 +25,11 @@
 				       <span class="in_pad2"></span> 
 						  <span class="item-icon-right"> <i
 							class="icon ion-ios-calendar-outline"style="color:#fff !important;"></i>
-							   <input type="text" placeholder="Date Of Move"
-									class="input" ng-model="sampleData.labelFour" pick-a-date="depDate"
-									pick-a-date-options="depOptions" placeholder="" />
+									<input type="text" placeholder="Date of Move" ng-model="sampleData.moveDate" name="datepicker" ng-click="opendateModal()" class="input">
 					  	 </span>
+					  	 
 					</label>
+					
 					
 					<label class="item item-input label5">
 				   		<span class="input-label">Flexible?</span>
@@ -37,15 +39,15 @@
 			        
 					<label class="item item-input"> 
 			          <span class="input-label">Day</span> 
-				              <ion-radio value="fullDay" ng-model="sampleData.day" class="radioCls" />Full Day</ion-radio>
-				              <ion-radio value="halfDay" ng-model="sampleData.day" class="radioCls"/>Half Day</ion-radio> 
+				              <ion-radio value="fullDay" ng-model="sampleData.isFullDay" class="radioCls" />Full Day</ion-radio>
+				              <ion-radio value="halfDay" ng-model="sampleData.isFullDay" class="radioCls"/>Half Day</ion-radio> 
 			         </label>
          
 			         <label class="item item-input"> 
 			          	<span class="input-label">Time Of Move</span> 
-				              <ion-radio value="AM" ng-model="sampleData.sampleData.timeOfMove" class="radioCls" />AM</ion-radio>
-				              <ion-radio value="PM" ng-model="sampleData.sampleData.timeOfMove" class="radioCls"/>PM</ion-radio> 
-				              <ion-radio value="Any"ng-model="sampleData.sampleData.timeOfMove" class="radioCls"/>Any</ion-radio> 
+				              <ion-radio value="AM" ng-model="sampleData.timeOfMove" class="radioCls" />AM</ion-radio>
+				              <ion-radio value="PM" ng-model="sampleData.timeOfMove" class="radioCls"/>PM</ion-radio> 
+				              <ion-radio value="Any"ng-model="sampleData.timeOfMove" class="radioCls"/>Any</ion-radio> 
 			         </label> 
                
 			          <label class="item item-input label5">
@@ -54,16 +56,10 @@
 			                     		 style="border:none !important; color:#fff; font-weight:bold;"></ion-checkbox>
 			          </label>
 			          
-               <ion-item  href="#/tab/viewBrand"><button class="button button-calm button-small">Search</button></ion-item>
-   <!-- <ion-item  ui-sref="tab.viewBrand({labelOne: sampleData.labelOne,
-   									 labelTwo: sampleData.labelTwo, 
-   									 labelThree: sampleData.labelThree,
-   									 labelFour:sampleData.labelFour,
-   									 labelFive:sampleData.labelFive, 
-   									 labelSix:sampleData.labelSix,
-   									 labelSeven:sampleData.labelSeven})" class="">
-   			<span class="item_hover"><button class="button button-calm button-small">Search</button></span>
-   </ion-item> -->
+               <ion-item  ui-sref="tab.viewBrand({from : sampleData.from, to : sampleData.to, roomSize : sampleData.roomSize, moveDate : sampleData.moveDate, flexible : sampleData.flexible, isFullDay : sampleData.isFullDay, timeOfMove : sampleData.timeOfMove})">
+               		<button class="button button-calm button-small">Search</button>
+               	</ion-item>
+   
    
  </div>
 </ion-list>

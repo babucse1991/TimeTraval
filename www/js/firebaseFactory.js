@@ -13,13 +13,13 @@ angular.module('app.firebase', [])
 		}
 	}
 })
-/*.factory("sampleItems", function($firebase,Spinner) {
+.factory("vehicalEntry", function($firebase,Spinner) {
 	 
       var itemsRef = new Firebase("https://todomvc-angular.firebaseio.com/items");
       
       return $firebase(itemsRef);
       Spinner.spin();
-})*/
+})
 
 .factory('searchData', function($http,Spinner){
 	return{
