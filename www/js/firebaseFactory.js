@@ -13,18 +13,18 @@ angular.module('app.firebase', [])
 		}
 	}
 })
-.factory("sampleItems", function($firebase,Spinner) {
+/*.factory("sampleItems", function($firebase,Spinner) {
 	 
       var itemsRef = new Firebase("https://todomvc-angular.firebaseio.com/items");
       
       return $firebase(itemsRef);
       Spinner.spin();
-})
+})*/
 
-/*.factory('searchData', function($http,Spinner){
+.factory('searchData', function($http,Spinner){
 	return{
 		getSearchData : function(){
 			return $http.get("./JSON/search.json");
 		}
 	}
-});*/
+});

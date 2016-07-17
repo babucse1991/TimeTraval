@@ -5,15 +5,9 @@ var MPH_IN_KMH = 0.6213711922;
 
 angular.module('starter', [
   'ionic', 
-  'ionic.utils', 
-  'ngCordova', 
-  'starter.controllers-dash', 
-  'starter.controllers-other', 
-  'starter.services-timer',
-  'starter.services-utils',
-  'starter.services-share',
-  'starter.services-history',
-  'starter.services-variables',
+  /*'ionic.utils', */
+ /* 'ngCordova', */
+  'autocomplete.directive',
   'searchBrandCtrl',
   'app.firebase', 
   'firebase',
@@ -41,7 +35,7 @@ angular.module('starter', [
 // https://blog.nraboy.com/2014/09/handling-apache-cordova-events-ionicframework/
 //
 // record a timeout (such that timewatch resumes when needed)
-.run(function($ionicPlatform, $state, $rootScope) {
+/*.run(function($ionicPlatform, $state, $rootScope) {
     $ionicPlatform.ready(function() {
       document.addEventListener("pause", function() {
         if($state.current.name == "tab.dash") {
@@ -59,7 +53,7 @@ angular.module('starter', [
         
       }, false);
     });
-})
+})*/
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -83,56 +77,6 @@ angular.module('starter', [
     templateUrl: "templates/tabs.html"
   })
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-  
-  .state('tab.settings', {
-    url: '/settings',
-    views: {
-      'tab-settings': {
-        templateUrl: 'templates/tab-settings.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  })
-    .state('tab.tutorial', {
-      url: '/settings/tutorial',
-      views: {
-        'tab-settings': {
-          templateUrl: 'templates/settings-tutorial.html',
-          controller: 'AccountCtrl'
-        }
-      }
-    })
-    .state('tab.stars', {
-      url: '/settings/stars',
-      views: {
-        'tab-settings': {
-          templateUrl: 'templates/blanc.html',
-          controller: 'AccountCtrl'
-        }
-      }
-    })
-
-  .state('tab.history', {
-    url: '/history',
-    views: {
-      'tab-history': {
-        templateUrl: 'templates/tab-history.html',
-        controller: 'HistoryCtrl'
-      }
-    }
-  })
-
   .state('tab.searchBrand', {
 		url: '/searchBrand',
 		views: {
@@ -144,8 +88,9 @@ angular.module('starter', [
 		}
 	})
 	
+	
 	.state('tab.viewBrand', {
-		url: '/viewBrand/:labelOne/:labelTwo/:labelThree/:labelFour/:labelFive/:labelSix/:labelSeven',
+		url: '/viewBrand',
 		views: {
 			'tab-searchBrand': {
 				templateUrl: 'templates/viewBrand.html',
@@ -154,6 +99,18 @@ angular.module('starter', [
 
 		}
 	})
+	
+	
+	/*.state('tab.viewBrand', {
+		url: '/viewBrand/:labelOne/:labelTwo/:labelThree/:labelFour/:labelFive/:labelSix/:labelSeven',
+		views: {
+			'tab-searchBrand': {
+				templateUrl: 'templates/viewBrand.html',
+				controller: 'viewBrandCtrl'
+			}
+
+		}
+	})*/
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/searchBrand');

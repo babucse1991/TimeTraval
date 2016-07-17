@@ -1,8 +1,10 @@
 angular.module('viewBrandCtrl', [])
 
-.controller('viewBrandCtrl', function($scope, $stateParams, sampleItems, $ionicLoading, $filter) {
-	/*searchData*/
-	 $scope.searchlabelOne = $stateParams.labelOne;
+.controller('viewBrandCtrl', function($scope, searchData) {
+	
+	/*,$stateParams, sampleItems, $ionicLoading, $filter*/
+	
+	/* $scope.searchlabelOne = $stateParams.labelOne;
 	 $scope.searchlabelTwo= $stateParams.labelTwo;
 	 $scope.searchlabelThree= $stateParams.labelThree;
 	 $scope.searchlabelFour= $stateParams.labelFour;
@@ -52,17 +54,17 @@ angular.module('viewBrandCtrl', [])
 			$scope.searchData = $scope.resultArray; 
 	};
 	
-	$scope.getSearchData();
+	$scope.getSearchData();*/
 	
 	
-		/*$scope.getSearchData = function(){
+		$scope.getSearchData = function(){
 		searchData.getSearchData()
 		.success(function(data) {
 			$scope.searchData = data;
 			console.log(JSON.stringify($scope.searchData))
 		});
 		};
-		$scope.getSearchData();*/
+		$scope.getSearchData();
 
 
 });

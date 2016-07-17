@@ -1,3 +1,22 @@
-[{"labelFive":true,"labelFour":"tng111","labelOne":"tng111","labelSeven":true,"labelSix":"AM","labelThree":"Yes","labelTwo":"ting111"},{"labelFive":true,"labelFour":"teng12","labelOne":"testing12","labelSeven":true,"labelSix":"AM","labelThree":"Yes","labelTwo":"testing12"}]
+[
 
+    {
+        "companyName":"Test",
+        "pkgCost":500,
+        "smallVan":300,
+        "proposedVan":400,
+        "biggerVan":500,
+        "evenBiggerVan":600,
+        "totolCost":550
+    },
+    {
+        "companyName":"Test1",
+        "pkgCost":230,
+        "smallVan":370,
+        "proposedVan":460,
+        "biggerVan":340,
+        "evenBiggerVan":600,
+        "totolCost":1230
+    }
 
+]
