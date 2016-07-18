@@ -3,21 +3,21 @@ angular.module('viewBrandCtrl', [])
 .controller('viewBrandCtrl', function($scope, searchData, $stateParams, vehicalEntry, $ionicLoading, $filter) {
 	
 	
-	 $scope.searchfrom = $stateParams.from;
+	/* $scope.searchfrom = $stateParams.from;*/
 	 $scope.searchtoAddr= $stateParams.to;
-	 $scope.searchroomSize= $stateParams.roomSize;
-	 $scope.searchmoveDate= $stateParams.moveDate;
+	 $scope.searchvanSize= $stateParams.vanSize;
+	 //$scope.searchmoveDate= $stateParams.moveDate;
 	 $scope.searchflexible= $stateParams.flexible;
-	 $scope.searchisFullDay= $stateParams.isFullDay;
-	 $scope.searchtimeOfMove= $stateParams.timeOfMove;
+	/* $scope.searchisFullDay= $stateParams.isFullDay;
+	 $scope.searchtimeOfMove= $stateParams.timeOfMove;*/
 	 
 	 
 	 $scope.vehicalEntry = vehicalEntry;
 	 
-	 console.log(" $scope.searchKeys : " + $scope.searchfrom + " >> " + $scope.searchtoAddr + " >>"+ $scope.searchroomSize + " >> " + $scope.searchmoveDate + " >> " + $scope.searchflexible +
-			 " >> " + $scope.searchisFullDay + " >> " + $scope.searchtimeOfMove);
+	 console.log(" $scope.searchKeys :"+ $scope.searchvanSize + " >> >> " + $scope.searchflexible + " >> " + $scope.searchtoAddr);
 	
-	 
+	/* console.log(" $scope.searchKeys : " + $scope.searchfrom + " >> " + $scope.searchtoAddr + " >>"+ $scope.searchvanSize + " >> " + $scope.searchmoveDate + " >> " + $scope.searchflexible +
+			 " >> " + $scope.searchisFullDay + " >> " + $scope.searchtimeOfMove);*/
 	 $scope.getSearchData =  function () {
 			
 			$scope.resultArray = [];
@@ -29,27 +29,27 @@ angular.module('viewBrandCtrl', [])
 			
 			console.log("$scope.resultArray : " + JSON.stringify($scope.resultArray));
 			
-			if (!angular.isUndefined($scope.searchfrom)) {
+		/*	if (!angular.isUndefined($scope.searchfrom)) {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchfrom , function(matchedVal, filterText) { console.log("matchedVal :" + matchedVal); return ( (matchedVal.toString().indexOf(filterText) >= 0)   ? true : false )});	
-			}
+			}*/
 			if (!angular.isUndefined($scope.searchtoAddr) && $scope.searchtoAddr != '') {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchtoAddr , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
 			}
-			if (!angular.isUndefined($scope.searchroomSize) && $scope.searchroomSize != '') {
-				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchroomSize , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
+			if (!angular.isUndefined($scope.searchvanSize) && $scope.searchvanSize != '') {
+				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchvanSize , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
 			}
-			if (!angular.isUndefined($scope.searchmoveDate) && $scope.searchmoveDate != '') {
+			/*if (!angular.isUndefined($scope.searchmoveDate) && $scope.searchmoveDate != '') {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchmoveDate , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
-			}
+			}*/
 			if (!angular.isUndefined($scope.searchflexible) && $scope.searchflexible != '') {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchflexible , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
 			}
-			if (!angular.isUndefined($scope.searchisFullDay) && $scope.searchisFullDay != '') {
+			/*if (!angular.isUndefined($scope.searchisFullDay) && $scope.searchisFullDay != '') {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchisFullDay , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
 			}
 			if (!angular.isUndefined($scope.searchtimeOfMove) && $scope.searchtimeOfMove != '') {
 				$scope.resultArray = $filter('filter')($scope.resultArray, $scope.searchtimeOfMove , function(matchedVal, filterText) { return ( (matchedVal.toString().indexOf(filterText) >= 0) ? true : false )});
-			}
+			}*/
 			
 			console.log("$scope.resultArray : " + JSON.stringify($scope.resultArray));
 			$scope.searchData = $scope.resultArray; 
@@ -67,7 +67,7 @@ angular.module('viewBrandCtrl', [])
 		};*/
 		$scope.getSearchData();
 
-		$scope.saveSampleData =  function () {
+	/*	$scope.saveSampleData =  function () {
 			
 			$scope.sampleData = [
 {
@@ -160,6 +160,6 @@ angular.module('viewBrandCtrl', [])
 			
 		}
 		
-		$scope.saveSampleData();
+		$scope.saveSampleData();*/
 
 });
